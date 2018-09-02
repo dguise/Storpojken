@@ -1,0 +1,719 @@
+fileFormatVersion: 2
+guid: 447faa5269bed344a97b079b6c117a66
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: NES - Mega Man 2 - Mega Man and Friendly NPCs_0
+    21300002: NES - Mega Man 2 - Mega Man and Friendly NPCs_1
+    21300004: NES - Mega Man 2 - Mega Man and Friendly NPCs_2
+    21300006: NES - Mega Man 2 - Mega Man and Friendly NPCs_3
+    21300008: NES - Mega Man 2 - Mega Man and Friendly NPCs_4
+    21300010: NES - Mega Man 2 - Mega Man and Friendly NPCs_5
+    21300012: NES - Mega Man 2 - Mega Man and Friendly NPCs_6
+    21300014: NES - Mega Man 2 - Mega Man and Friendly NPCs_7
+    21300016: NES - Mega Man 2 - Mega Man and Friendly NPCs_8
+    21300018: NES - Mega Man 2 - Mega Man and Friendly NPCs_9
+    21300020: NES - Mega Man 2 - Mega Man and Friendly NPCs_10
+    21300022: NES - Mega Man 2 - Mega Man and Friendly NPCs_11
+    21300024: NES - Mega Man 2 - Mega Man and Friendly NPCs_12
+    21300026: NES - Mega Man 2 - Mega Man and Friendly NPCs_13
+    21300028: NES - Mega Man 2 - Mega Man and Friendly NPCs_14
+    21300030: NES - Mega Man 2 - Mega Man and Friendly NPCs_15
+    21300032: NES - Mega Man 2 - Mega Man and Friendly NPCs_16
+    21300034: NES - Mega Man 2 - Mega Man and Friendly NPCs_17
+    21300036: NES - Mega Man 2 - Mega Man and Friendly NPCs_18
+    21300038: NES - Mega Man 2 - Mega Man and Friendly NPCs_19
+    21300040: NES - Mega Man 2 - Mega Man and Friendly NPCs_20
+    21300042: NES - Mega Man 2 - Mega Man and Friendly NPCs_21
+    21300044: NES - Mega Man 2 - Mega Man and Friendly NPCs_22
+    21300046: NES - Mega Man 2 - Mega Man and Friendly NPCs_23
+    21300048: NES - Mega Man 2 - Mega Man and Friendly NPCs_24
+    21300050: NES - Mega Man 2 - Mega Man and Friendly NPCs_25
+    21300052: NES - Mega Man 2 - Mega Man and Friendly NPCs_26
+    21300054: NES - Mega Man 2 - Mega Man and Friendly NPCs_27
+    21300056: NES - Mega Man 2 - Mega Man and Friendly NPCs_28
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3029
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2e6920b70d03d448f9a151f6519e08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 3029
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9ccd83698570f4a97361d473407f74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 3029
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a020de765d009b46b10f6b734b76036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 3029
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388066ce7bf990b41896e8d706bcd308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_4
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 3029
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0279cb98ab55ff4da2cbc7be9a77979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_5
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 3029
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3e85a816500654ab998e5cb75ab0c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_6
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 3029
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3353233266b644087a8613310e26ae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 3029
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a108fc2fd5caf46a50a07f5ca645f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_8
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 3029
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1404d14aae85a47992161216385880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 3029
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac50cde054f8f9428f946729b03dee5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_10
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 3029
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84c46fae8e83e645b2d6f4c163e943b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_11
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 3029
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d292e8dd05ecd4e87c06ffebf91a87
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_12
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 3029
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1d64dbad5c9034fb89f448ffde19ec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_13
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 3029
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e54be9470f1c83441b8a8e00a0cf5e1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_14
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 3029
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e29be287b0e1234da1d728cc792261e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_15
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 3029
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1fa149769a224746961e6ff770617ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_16
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 3029
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882af624fb7633f4a8aada4b2d50902e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_17
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 3029
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c958d9fc5e0dd1949a2315fa6452f47a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_18
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3029
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cbdb71f125df541b098d8e09294770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_19
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 3029
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c1812e2c825314b96cf2169edc61ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_20
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 3029
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 318336baaee7edd43940b55a53d08fd3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_21
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 3029
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39223c2c672ebf94d97a1e20857d1e60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_22
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 3029
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1885d399578524cbc67642a5570f8b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_23
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 2992
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc3670ed17f8738499bf8666e2c13844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_24
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 2988
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6555cd65f72a97c46b52e3fdc34b1324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_25
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 2988
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f263cc43261e0a7459a1ec35f76557d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_26
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 2988
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323895c694a9fdc45a01950ebcfd87b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_27
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 2984
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af92a1378a02282469301c95914ea11e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Mega Man 2 - Mega Man and Friendly NPCs_28
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 2984
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04366d0a38d986419e3cab6c63cde88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5276c74b0e25d324ba13ab7f824ea57e
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
