@@ -48,6 +48,62 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     BoxCollider2D collider;
 
+    #region WeaponColors
+    //Buster
+    Color teal = new Color(0, 0.90980392156862745098039215686275f, 0.84705882352941176470588235294118f);
+    Color blue = new Color(0, 0.43921568627450980392156862745098f, 0.92549019607843137254901960784314f);
+
+    //Bubble Man
+    Color white = new Color(0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f);
+    Color gray = new Color(0.45490196078431372549019607843137f, 0.45490196078431372549019607843137f, 0.45490196078431372549019607843137f);
+
+    //Air Man
+    //Color white = new Color(0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f);
+    Color darkBlue = new Color(0, 0.43921568627450980392156862745098f, 0.92549019607843137254901960784314f);
+
+    //Quick Man
+    Color pink = new Color(0.98823529411764705882352941176471f, 0.76862745098039215686274509803922f, 0.98823529411764705882352941176471f);
+    Color darkPink = new Color(0.98823529411764705882352941176471f, 0.45490196078431372549019607843137f, 0.70588235294117647058823529411765f);
+
+    //Heat Man
+    Color heatmanTorso = new Color(0.94117647058823529411764705882353f, 0.73725490196078431372549019607843f, 0.23529411764705882352941176470588f);
+    Color heatmanHelmet = new Color(0.89411764705882352941176470588235f, 0, 0.34509803921568627450980392156863f);
+
+    Color heatmanTorso_2 = new Color(0.94117647058823529411764705882353f, 0.73725490196078431372549019607843f, 0.23529411764705882352941176470588f);
+    Color heatmanHelmet_2 = new Color(0.89411764705882352941176470588235f, 0, 0.34509803921568627450980392156863f);
+    Color heatmanOutline_2 = new Color(0.65882352941176470588235294117647f, 0.89411764705882352941176470588235f, 0.98823529411764705882352941176471f);
+
+    Color heatmanTorso_3 = new Color(0.94117647058823529411764705882353f, 0.73725490196078431372549019607843f, 0.23529411764705882352941176470588f);
+    Color heatmanHelmet_3 = new Color(0, 0.90980392156862745098039215686275f, 0.84705882352941176470588235294118f);
+    Color heatmanOutline_3 = new Color(0.98823529411764705882352941176471f, 0.76862745098039215686274509803922f, 0.84705882352941176470588235294118f);
+
+    Color heatmanTorso_4 = new Color(0.94117647058823529411764705882353f, 0.73725490196078431372549019607843f, 0.23529411764705882352941176470588f);
+    Color heatmanHelmet_4 = new Color(0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f);
+    Color heatmanOutline_4 = new Color(0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f);
+
+    //Wood Man
+    //Color white = new Color(0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f);
+    Color green = new Color(0, 0.5803921568627450980392156862745f, 0);
+
+    //Metal Man
+    Color metalManWhite = new Color(0.98823529411764705882352941176471f, 0.84705882352941176470588235294118f, 0.65882352941176470588235294117647f);
+    Color metalManBrown = new Color(0.53333333333333333333333333333333f, 0.43921568627450980392156862745098f, 0);
+
+    //Flash Man
+    Color flashManPurple = new Color(0.98823529411764705882352941176471f, 0.76862745098039215686274509803922f, 0.98823529411764705882352941176471f);
+    Color flashManDarkPurple = new Color(0.73725490196078431372549019607843f, 0, 0.73725490196078431372549019607843f);
+
+    //Crash Man
+    //Color white = new Color(0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f);
+    Color crashManRed = new Color(0.98823529411764705882352941176471f, 0.45490196078431372549019607843137f, 0.37647058823529411764705882352941f);
+
+    //Rush
+    //Color white = new Color(0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f, 0.98823529411764705882352941176471f);
+    Color rushRed = new Color(0.84705882352941176470588235294118f, 0.15686274509803921568627450980392f, 0);
+    #endregion
+
+    public bool IgnoreLeftWallCheck = false;
+    public bool IgnoreRightWallCheck = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -237,6 +293,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PerformJump(bool fullJump = true)
     {
+        SwapWeapon();
         movement.y = jumpForce;
         airborneBecauseOfJump = true;
         jumpsLeft--;
@@ -280,6 +337,9 @@ public class PlayerMovement : MonoBehaviour
     }
     bool ScanForRightWall()
     {
+        if (IgnoreRightWallCheck == true)
+            return false;
+
         // +- 0.1f to bring it in from the edges a bit, the down-raycasts would register on walls when
         // moving towards it otherwise
         var rightTopEdgeOfPlayer = new Vector2(collider.bounds.max.x, collider.bounds.max.y - 0.1f);
@@ -304,6 +364,9 @@ public class PlayerMovement : MonoBehaviour
     }
     bool ScanForLeftWall()
     {
+        if (IgnoreLeftWallCheck == true)
+            return false;
+
         // +- 0.1f to bring it in from the edges a bit, the down-raycasts would register on walls when
         // moving towards it otherwise
         var leftTopEdgeOfPlayer = new Vector2(collider.bounds.min.x, collider.bounds.max.y - 0.1f);
@@ -341,6 +404,60 @@ public class PlayerMovement : MonoBehaviour
     {
         this.jumpsLeft = 0;
         this.rb.velocity.Set(0, 0);
+    }
+
+
+    public void SwapWeapon()
+    {
+        int i = Random.Range(0, 9);
+
+
+        switch (i)
+        {
+            case 0: //Buster
+                sprite.material.SetColor("_Color1out", teal); //Mage
+                sprite.material.SetColor("_Color2out", blue); //Hjälm, armar, ben, kalsonger
+                break;
+            case 1: //Bubble Man
+                sprite.material.SetColor("_Color1out", white); //Mage
+                sprite.material.SetColor("_Color2out", gray); //Hjälm, armar, ben, kalsonger
+                break;
+            case 2: //Air Man
+                sprite.material.SetColor("_Color1out", white); //Mage
+                sprite.material.SetColor("_Color2out", darkBlue); //Hjälm, armar, ben, kalsonger
+                break;
+            case 3: //Quick Man
+                sprite.material.SetColor("_Color1out", pink); //Mage
+                sprite.material.SetColor("_Color2out", darkPink); //Hjälm, armar, ben, kalsonger
+                break;
+            case 4: //Heat Man
+                sprite.material.SetColor("_Color1out", heatmanTorso); //Mage
+                sprite.material.SetColor("_Color2out", heatmanHelmet); //Hjälm, armar, ben, kalsonger
+                break;
+            case 5: //Wood Man
+                sprite.material.SetColor("_Color1out", white); //Mage
+                sprite.material.SetColor("_Color2out", green); //Hjälm, armar, ben, kalsonger
+                break;
+            case 6: //Metal Man
+                sprite.material.SetColor("_Color1out", metalManWhite); //Mage
+                sprite.material.SetColor("_Color2out", metalManBrown); //Hjälm, armar, ben, kalsonger
+                break;
+            case 7: //Flash Man
+                sprite.material.SetColor("_Color1out", flashManPurple); //Mage
+                sprite.material.SetColor("_Color2out", flashManDarkPurple); //Hjälm, armar, ben, kalsonger
+                break;
+            case 8: //Crash Man
+                sprite.material.SetColor("_Color1out", white); //Mage
+                sprite.material.SetColor("_Color2out", crashManRed); //Hjälm, armar, ben, kalsonger
+                break;
+            case 9: //Rush
+                sprite.material.SetColor("_Color1out", white); //Mage
+                sprite.material.SetColor("_Color2out", rushRed); //Hjälm, armar, ben, kalsonger
+                break;
+            default:
+                break;
+        }
+
     }
 }
 

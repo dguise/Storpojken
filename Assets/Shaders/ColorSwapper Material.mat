@@ -26,7 +26,7 @@ Material:
     - PixelSnap: 0
     m_Colors:
     - _Color1in: {r: 0, g: 0.9098039, b: 0.84705883, a: 1}
-    - _Color1out: {r: 1, g: 0, b: 0, a: 1}
+    - _Color1out: {r: 0, g: 0.909804, b: 0.8470589, a: 1}
     - _Color2in: {r: 0, g: 0.4392157, b: 0.9254902, a: 1}
-    - _Color2out: {r: 1, g: 0.8112416, b: 0, a: 1}
+    - _Color2out: {r: 0, g: 0.43921572, b: 0.92549026, a: 1}
     - _ColorTint: {r: 1, g: 1, b: 1, a: 1}
