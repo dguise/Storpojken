@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour {
 
-    float speed = 1800.0f;
+    float speed = 8000.0f;
     public Vector2 direction = Vector2.left;
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -16,7 +16,7 @@ public class ConveyorBelt : MonoBehaviour {
         {
             float convVelo = speed * Time.deltaTime;
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-
+            rb.velocity = new Vector2(0, rb.velocity.y);
             rb.AddRelativeForce(convVelo * direction);
         }
     }
