@@ -35,6 +35,10 @@ public class CameraScript : MonoBehaviour
                     this.transform.position = new Vector3((float)System.Math.Round(Player.transform.position.x, 2), this.transform.position.y, this.transform.position.z);
         }
         
+       
+    }
+    private void FixedUpdate()
+    {
         if (Vector3.Distance(this.transform.position, newPositon) < 0.01f)
         {
             movingCameraToPosition = false;
@@ -43,14 +47,13 @@ public class CameraScript : MonoBehaviour
         }
         if (movingCameraToPosition)
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, newPositon, speed * Time.deltaTime);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, newPositon, speed * Time.fixedDeltaTime);
             if (playerMovingWithCamera)
             {
-                Player.GetComponent<PlayerMovement>().transform.position = Vector3.MoveTowards(Player.GetComponent<PlayerMovement>().transform.position, newPlayerPos, 1 * Time.deltaTime);
+                Player.GetComponent<PlayerMovement>().transform.position = Vector3.MoveTowards(Player.GetComponent<PlayerMovement>().transform.position, newPlayerPos, 1 * Time.fixedDeltaTime);
             }
         }
     }
-
 
     IEnumerator MoveCameraDownOneScreen()
     {

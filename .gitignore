@@ -23,3 +23,5 @@ ExportedObj/
 
 # Other crap
 .vscode/
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
