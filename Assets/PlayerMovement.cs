@@ -126,8 +126,14 @@ public class PlayerMovement : MonoBehaviour
             // Get movement input
             movement = new Vector2(
             (movementSmoothing ? Input.GetAxis("Horizontal") : Input.GetAxisRaw("Horizontal")) * movementSpeed,
-            rb.velocity.y
-        );
+            rb.velocity.y);
+
+
+            if (Input.GetAxis("Horizontal") > 0)
+                sprite.flipX = true;
+            else if (Input.GetAxis("Horizontal") < 0)
+                sprite.flipX = false;
+
 
             // Get jump input states
             if (Input.GetKeyDown(KeyCode.Space))
@@ -160,6 +166,13 @@ public class PlayerMovement : MonoBehaviour
             // Handle ground states
             if (groundDetected)
             {
+                transform.position = new Vector3(
+                    
+                    this.transform.position.x,
+                    (float)((Mathf.Round(Mathf.Floor(this.transform.position.y * 100))) / 100.0),
+                    transform.position.z);
+                
+                
                 jumpsLeft = maxJumps;
                 isGrounded = true;
                 m_decreaseJumpsOnce = true;
@@ -319,19 +332,21 @@ public class PlayerMovement : MonoBehaviour
     {
         // +- 0.1f to bring it in from the edges a bit, the down-raycasts would register on walls when
         // moving towards it otherwise
-        var btmLeftEdgeOfPlayer = new Vector2(collider.bounds.min.x + 0.18f, collider.bounds.min.y);
-        var btmCenterfPlayer = new Vector2(collider.bounds.center.x, collider.bounds.min.y);
-        var btmRightEdgeOfPlayer = new Vector2(collider.bounds.max.x - 0.18f, collider.bounds.min.y);
-
-        var objectBelow = Physics2D.Raycast(btmCenterfPlayer, Vector2.down, 0.02f, layerMask);
+        float y = collider.bounds.min.y;
+        var btmLeftEdgeOfPlayer = new Vector2(collider.bounds.min.x + 0.18f, y);
+        var btmCenterfPlayer = new Vector2(collider.bounds.center.x, y);
+        var btmRightEdgeOfPlayer = new Vector2(collider.bounds.max.x - 0.18f, y);
+        
+        var distanceDown = 0.03f;
+        var objectBelow = Physics2D.Raycast(btmCenterfPlayer, Vector2.down, distanceDown, layerMask);
         if (objectBelow.collider == null)
-            objectBelow = Physics2D.Raycast(btmLeftEdgeOfPlayer, Vector2.down, 0.02f, layerMask);
+            objectBelow = Physics2D.Raycast(btmLeftEdgeOfPlayer, Vector2.down, distanceDown, layerMask);
         if (objectBelow.collider == null)
-            objectBelow = Physics2D.Raycast(btmRightEdgeOfPlayer, Vector2.down, 0.02f, layerMask);
-
-        Debug.DrawRay(btmLeftEdgeOfPlayer, Vector2.down * 0.03f, Color.green);
-        Debug.DrawRay(btmRightEdgeOfPlayer, Vector2.down * 0.03f, Color.blue);
-        Debug.DrawRay(btmCenterfPlayer, Vector2.down * 0.03f, Color.red);
+            objectBelow = Physics2D.Raycast(btmRightEdgeOfPlayer, Vector2.down, distanceDown, layerMask);
+        
+        Debug.DrawRay(btmLeftEdgeOfPlayer, Vector2.down * distanceDown, Color.green);
+        Debug.DrawRay(btmRightEdgeOfPlayer, Vector2.down * distanceDown, Color.blue);
+        Debug.DrawRay(btmCenterfPlayer, Vector2.down * distanceDown, Color.red);
 
         return objectBelow.collider != null && objectBelow.collider.tag == "Ground";
     }

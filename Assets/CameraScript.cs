@@ -43,10 +43,10 @@ public class CameraScript : MonoBehaviour
         }
         if (movingCameraToPosition)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position, newPositon, speed * Time.deltaTime);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, newPositon, speed * Time.deltaTime);
             if (playerMovingWithCamera)
             {
-                Player.GetComponent<PlayerMovement>().transform.position = Vector3.Lerp(Player.GetComponent<PlayerMovement>().transform.position, newPlayerPos, 1 * Time.deltaTime);
+                Player.GetComponent<PlayerMovement>().transform.position = Vector3.MoveTowards(Player.GetComponent<PlayerMovement>().transform.position, newPlayerPos, 1 * Time.deltaTime);
             }
         }
     }
