@@ -25,20 +25,22 @@ public class CameraScript : MonoBehaviour
 
     void Update()
     {
-        if (!fixedCamera)
-        {
-            if (!RightWall.GetComponent<CameraWall>().IsBlocked())
-                if (Player.transform.position.x > this.transform.position.x)
-                    this.transform.position = new Vector3((float)System.Math.Round(Player.transform.position.x, 2), this.transform.position.y, this.transform.position.z);
-            if (!LeftWall.GetComponent<CameraWall>().IsBlocked())
-                if (Player.transform.position.x < this.transform.position.x)
-                    this.transform.position = new Vector3((float)System.Math.Round(Player.transform.position.x, 2), this.transform.position.y, this.transform.position.z);
-        }
+        
         
        
     }
     private void FixedUpdate()
     {
+        if (!fixedCamera)
+        {
+            if (!RightWall.GetComponent<CameraWall>().IsBlocked())
+                if (Player.transform.position.x > this.transform.position.x)
+                    this.transform.position = new Vector3((float)System.Math.Round(Player.transform.position.x, 3), this.transform.position.y, this.transform.position.z);
+            if (!LeftWall.GetComponent<CameraWall>().IsBlocked())
+                if (Player.transform.position.x < this.transform.position.x)
+                    this.transform.position = new Vector3((float)System.Math.Round(Player.transform.position.x, 3), this.transform.position.y, this.transform.position.z);
+        }
+
         if (Vector3.Distance(this.transform.position, newPositon) < 0.01f)
         {
             movingCameraToPosition = false;
