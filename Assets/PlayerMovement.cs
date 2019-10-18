@@ -158,21 +158,28 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!frozen)
         {
-            var groundDetected = ScanForGround();
+            //Debug.Log("Grounded = " + isGrounded);
+            Vector3? HitPointGround = null;
+            var groundDetected = ScanForGround(out HitPointGround);
             var rightWallDetected = ScanForRightWall();
             var leftWallDetected = ScanForLeftWall();
             var wallDetected = rightWallDetected || leftWallDetected;
-
+            //Debug.Log("Ground Detected? " + groundDetected + "    " + Time.timeSinceLevelLoad);
             // Handle ground states
             if (groundDetected)
             {
-                transform.position = new Vector3(
-                    
-                    this.transform.position.x,
-                    (float)((Mathf.Round(Mathf.Floor(this.transform.position.y * 100))) / 100.0),
-                    transform.position.z);
-                
-                
+                //transform.position = new Vector3(
+
+                //    this.transform.position.x,
+                //    (float)((Mathf.Round(Mathf.Floor(this.transform.position.y * 100))) / 100.0),
+                //    transform.position.z);
+
+                //if (!isGrounded)
+                //    if (HitPointGround.HasValue)
+                //        transform.position = new Vector3(
+                //            this.transform.position.x, HitPointGround.Value.y ,
+                //            transform.position.z);
+
                 jumpsLeft = maxJumps;
                 isGrounded = true;
                 m_decreaseJumpsOnce = true;
@@ -270,32 +277,32 @@ public class PlayerMovement : MonoBehaviour
 
             if (isGrounded)
             {
-                anim.SetBool("Jumping", jumping);
-                bool NowRunning = Mathf.Abs(movement.x) > 0;
-                if (NowRunning && running == false && startedRunning == false)
+                if (anim.GetBool("Jumping"))
+                anim.SetBool("Jumping", false);
+                bool hasXVelocity = Mathf.Abs(movement.x) > 0;
+                if (hasXVelocity && anim.GetBool("Running") == false && anim.GetBool("StartedRunning") == false)
                 {
-                    startedRunning = true;
+                    Debug.Log("1");
                     anim.SetBool("StartedRunning", true);
                 }
-                else if (NowRunning && startedRunning)
+                else if (hasXVelocity && anim.GetBool("StartedRunning"))
                 {
-                    running = true;
+                    Debug.Log("2");
                     anim.SetBool("Running", true);
 
-                    startedRunning = false;
                     anim.SetBool("StartedRunning", false);
                 }
-                else if (NowRunning == false)
+                else if (hasXVelocity == false)
                 {
-                    running = false;
+                    Debug.Log("3");
                     anim.SetBool("Running", false);
                 }
             }
             else if (!isGrounded && !leftWallDetected && !rightWallDetected)
             {
-                if (running)
+                if (anim.GetBool("Running"))
                 {
-                    running = false;
+                    Debug.Log("4");
                     anim.SetBool("Running", false);
 
                     anim.SetBool("Jumping", true);
@@ -328,7 +335,7 @@ public class PlayerMovement : MonoBehaviour
         bufferJumpIsRunning = false;
     }
 
-    bool ScanForGround()
+    bool ScanForGround(out Vector3? hitPoint)
     {
         // +- 0.1f to bring it in from the edges a bit, the down-raycasts would register on walls when
         // moving towards it otherwise
@@ -336,17 +343,20 @@ public class PlayerMovement : MonoBehaviour
         var btmLeftEdgeOfPlayer = new Vector2(collider.bounds.min.x + 0.18f, y);
         var btmCenterfPlayer = new Vector2(collider.bounds.center.x, y);
         var btmRightEdgeOfPlayer = new Vector2(collider.bounds.max.x - 0.18f, y);
-        
+
         var distanceDown = 0.03f;
         var objectBelow = Physics2D.Raycast(btmCenterfPlayer, Vector2.down, distanceDown, layerMask);
         if (objectBelow.collider == null)
             objectBelow = Physics2D.Raycast(btmLeftEdgeOfPlayer, Vector2.down, distanceDown, layerMask);
         if (objectBelow.collider == null)
             objectBelow = Physics2D.Raycast(btmRightEdgeOfPlayer, Vector2.down, distanceDown, layerMask);
-        
+
+        hitPoint = objectBelow.point;
+
         Debug.DrawRay(btmLeftEdgeOfPlayer, Vector2.down * distanceDown, Color.green);
         Debug.DrawRay(btmRightEdgeOfPlayer, Vector2.down * distanceDown, Color.blue);
-        Debug.DrawRay(btmCenterfPlayer, Vector2.down * distanceDown, Color.red);
+        if (objectBelow.collider != null)
+            Debug.DrawRay(btmCenterfPlayer, Vector2.down * distanceDown, Color.red);
 
         return objectBelow.collider != null && objectBelow.collider.tag == "Ground";
     }

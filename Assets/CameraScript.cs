@@ -78,10 +78,10 @@ public class CameraScript : MonoBehaviour
         movingCameraToPosition = true;
         playerMovingWithCamera = true;
         dirToMove = (newPositon - this.transform.position).normalized;
-        Debug.Log("Dir to move = " + dirToMove);
+        //Debug.Log("Dir to move = " + dirToMove);
         newPlayerPos = Player.GetComponent<PlayerMovement>().transform.position + (dirToMove * 0.6f);
         Player.GetComponent<PlayerMovement>().WasteJumpsAndResetVelocity();
-        Debug.Log("Mult: " + multiplier);
+        //Debug.Log("Mult: " + multiplier);
         multiplier += 0.61f;
         yield return wait;
     }
