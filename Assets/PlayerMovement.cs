@@ -402,9 +402,12 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
+    private Vector3 savedVelo = Vector3.zero;
     public void Freeze()
     {
         this.frozen = true;
+        //savedVelo = rb.velocity;
+        //rb.velocity = Vector3.zero;
         rb.bodyType = RigidbodyType2D.Static;
         rb.simulated = false;
     }
@@ -412,6 +415,7 @@ public class PlayerMovement : MonoBehaviour
     {
         this.frozen = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
+        //rb.velocity = savedVelo; //I originalet tappar man all velo och faller efter att man är igenom dörren
         rb.simulated = true;
     }
 

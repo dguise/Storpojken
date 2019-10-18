@@ -27,7 +27,9 @@ public class ZoneThatMovesCameraOnPlayerEnter : MonoBehaviour
                     MainCamera.GetComponent<CameraScript>().StartCoroutine("MoveCameraDownOneScreen");
                 else if (Right)
                 {
+                    Debug.Log("Start routine 'OpenAndCloseBossDoor'");
                     StartCoroutine(OpenAndCloseBossDoor());
+                    Debug.Log("After routing 'OpenAndCloseBossDoor'");
                 }
             }
         }
@@ -49,13 +51,17 @@ public class ZoneThatMovesCameraOnPlayerEnter : MonoBehaviour
         }
         MainCamera.GetComponent<CameraScript>().StartCoroutine("MoveCameraRightOneScreen");
         System.Array.Reverse(children);
+        Debug.Log("Waiting for camera to catch up");
         yield return waitForCameraToCatchUp;
+        Debug.Log("Done waiting for camera");
         foreach (var child in children)
         {
             if (child == this.transform) continue;
 
             child.gameObject.SetActive(true);
+            Debug.Log("Wait segment");
             yield return waitBetweenSegments;
+            Debug.Log("Done wait segment");
         }
         yield return wait;
     }

@@ -41,7 +41,7 @@ public class CameraScript : MonoBehaviour
                     this.transform.position = new Vector3((float)System.Math.Round(Player.transform.position.x, 3), this.transform.position.y, this.transform.position.z);
         }
 
-        if (Vector3.Distance(this.transform.position, newPositon) < 0.01f)
+        if (movingCameraToPosition && Vector3.Distance(this.transform.position, newPositon) < 0.01f)
         {
             movingCameraToPosition = false;
             playerMovingWithCamera = false;
@@ -65,6 +65,7 @@ public class CameraScript : MonoBehaviour
         Player.GetComponent<PlayerMovement>().Freeze();
         yield return wait;
     }
+    float multiplier = 1;
     IEnumerator MoveCameraRightOneScreen()
     {
         fixedCamera = true;
@@ -73,12 +74,15 @@ public class CameraScript : MonoBehaviour
         float camHalfWidth = screenAspect * camHalfHeight;
         float camWidth = 1.24f * camHalfWidth;
 
-        newPositon = new Vector3(this.transform.position.x + camWidth, this.transform.position.y, this.transform.position.z);
+        newPositon = new Vector3(this.transform.position.x + (camWidth * multiplier), this.transform.position.y, this.transform.position.z);
         movingCameraToPosition = true;
         playerMovingWithCamera = true;
         dirToMove = (newPositon - this.transform.position).normalized;
+        Debug.Log("Dir to move = " + dirToMove);
         newPlayerPos = Player.GetComponent<PlayerMovement>().transform.position + (dirToMove * 0.6f);
         Player.GetComponent<PlayerMovement>().WasteJumpsAndResetVelocity();
+        Debug.Log("Mult: " + multiplier);
+        multiplier += 0.61f;
         yield return wait;
     }
 }
